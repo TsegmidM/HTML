@@ -1,4 +1,4 @@
- body {
+ .container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,18 +7,18 @@
 }
 
 @media screen and (max-width:480px ) and (min-width:320px) {
-    .smart-phones {
+    .container {
     color: green;
     }
 }
 
-@media screen and (min-width:481) and (max-width: 767px) {
-    .low-res {
+@media screen and (max-width:767px) and (min-width: 481px) {
+    .container {
     color: orange;
     }
 }
 @media screen and (min-width:1281px) {
-    .hi-res {
+    .container {
     color: purple;
     }
 }
