@@ -1,0 +1,27 @@
+.main {
+    height:100vh;
+    border:1px solid;
+    display: flex;
+    flex-direction: column;
+}
+.header, .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+.columns{
+    display: flex;
+    min-height: calc(100vh - 60px - 60px);
+}
+.column1{
+    border: 1px solid;
+    flex-basis: 300px;
+    margin: 10px;
+}
+.column2{
+    border: 1px solid;
+    width: 100%;
+    margin: 10px;
+}

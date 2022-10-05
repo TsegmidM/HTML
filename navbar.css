@@ -1,0 +1,20 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#87cefa;
+    
+}
+.nav-bar-item{
+    color:white;
+    margin: 0px 10px;
+
+}
+.nav-bar-menu {
+    display: flex;
+    list-style-type: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+}

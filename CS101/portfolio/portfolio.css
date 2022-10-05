@@ -1,0 +1,43 @@
+body {
+    background-color: khaki;
+}
+h1 {
+    font-size:24px;
+    color: red;
+}
+.border1, .border2, .border3, .border4,.border5{
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+} 
+.border2, .border3, .border4, .border5{
+    height: 60px;
+}
+.border1 {
+    width: 350px;
+    border-color: green;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.border2 {
+    width: 60px;
+    border-color:orangered;
+    border-top-right-radius: 30px;
+}
+.border3{
+    width: 150px;
+    border-color: green;
+    border-bottom-right-radius:  15px;
+    border-top-right-radius: 15px;
+}
+.border4{
+    width: 150px;
+    border-color: red;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.border5{
+    width: 150px;
+    background-color: yellow;
+    border-radius: 30px;
+}

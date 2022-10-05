@@ -1,0 +1,23 @@
+.flex-container {
+    border: 1px solid black;
+    height: 200px;
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.flex-item, .flex-item1, .flex-item2 {
+    border: 1px solid red;
+    padding: 5px 30px;
+}
+.flex-item, .flex-item2{
+    align-self: flex-start;
+    border-radius: 5px;
+}
+.flex-item1 {
+    align-self:flex-end;
+    border-radius: 50%;   
+}
+.flex-item4{
+    align-self: center;
+    justify-content:50%;
+}

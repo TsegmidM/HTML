@@ -1,0 +1,28 @@
+.my-first-div, #my-third-div {
+    font-size: 20px;
+    color: blue;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color:khaki;
+    padding-left: 10px;
+    text-decoration:underline;
+    text-align: right;
+    cursor:grabbing;
+    opacity: .8;
+}
+.my-first-div:active , #my-second-div{
+    cursor: grabbing;
+}
+#my-second-div {
+    font-size: 25px;
+    color: rgb(2, 31, 31);
+    border-style: solid;
+    border-color: rgb(58, 4, 44);
+    border-width: 1px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px;
+    cursor: help;
+}
