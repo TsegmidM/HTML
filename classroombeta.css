@@ -1,0 +1,43 @@
+body {
+    bottom: auto;
+    height: 100%;
+    right: auto;
+    width: auto;
+    color: rgba(0,0,0,.87);
+    font-family: "Roboto",Helvetica,Arial,sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    margin: 0;
+    min-width: 18.75rem;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+}
+.main-container {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    backface-visibility: hidden;
+    min-height: 100%;
+    height: auto;
+    -webkit-tap-highlight-color: transparent;
+    background-color: aqua;
+}
+.top-container{
+    flex-shrink: 0;
+    height: 4.0625rem;
+    -webkit-tap-highlight-color: transparent;
+    visibility: visible;
+    border: 1px solid;
+}
+.bottom-container{
+    margin:0 auto;
+    flex-direction: column;
+    width: calc(100% - 2*1.5rem);
+    max-width: 62.5rem;
+    -webkit-tap-highlight-color: transparent;
+    border: 1px solid;
+}
