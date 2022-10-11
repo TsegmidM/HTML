@@ -43,6 +43,7 @@ body {
     padding-left: 1.5rem;
 }
 .top-left {
+    display: flex;
     justify-content: flex-start;
     flex: 1 1 0.0625rem;
     min-width: 0;
@@ -56,6 +57,11 @@ body {
     font-weight: 400;
     line-height: 1.75rem;
     color: #3c4043;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+  
 }
 .top-middle {
     display: flex;
@@ -71,6 +77,20 @@ body {
     padding: 0.125rem 1.5rem 0 1.5rem;
     position: relative;
     text-decoration: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.top-middle-2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 1rem;
+    width: auto;
+    min-width: 0;
+    text-decoration: none;    
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-bottom: 1px solid #dadce0;
 }
 .top-middle-list {
     padding:0.125rem 1rem 0 1rem;
@@ -79,7 +99,14 @@ body {
     padding: 0.125rem 1.5rem 0 1.5rem;
     position: relative;
     text-decoration: none;
-    
+    border-bottom: solid 0.125rem transparent;
+    box-sizing: border-box;
+    letter-spacing: .01785714em;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-align: center;
 }
 .top-right {
     display: flex;
@@ -133,6 +160,10 @@ body {
     position: absolute;
     right: 0;
     text-shadow: 0 1px 3px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 30%);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
 }
 .fb-icon {
     position: absolute;
@@ -314,6 +345,10 @@ body {
     line-height: 1.25rem;
     color: #3c4043;
     justify-self: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
 }
 .list-2-date{
     letter-spacing: .025em;
@@ -322,4 +357,50 @@ body {
     font-weight: 400;
     line-height: 1rem;
     color: #5f6368;
+}
+
+/*MEDIA QUERIES */
+@media screen and (max-width: 780px){
+    body{
+        font-size: 0.875rem;
+    }
+    .sb-col-1{
+        display: none;
+    }
+    .sb-col-2{
+        width: fit-content;
+    }
+    .top-left-txt{
+        letter-spacing: .00625em;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+     }
+     .fb-txt{
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 2.25rem;
+        padding-right: 0;
+     }
+     .top-middle-list{
+        padding: 0.125rem 1rem 0 1rem;
+        font-size: 0.875rem;
+     }
+}
+@media not all and (min-width: 65.125em){
+    .top-middle {
+        display: none;
+     }
+    .top-container {
+        border: none;
+    }
+}
+@media not all and (max-width: 65.124em){
+    .top-middle-2 {
+        display: none;
+     
+    }
+   
 }
