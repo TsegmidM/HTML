@@ -4,14 +4,13 @@ const equalKey = document.getElementById("equal-key");
 const clearKey = document.getElementById("clear-key");
 const currentOp = document.getElementById("current-op");
 const previousOp = document.getElementById("previous-op");
+const dotKey = document.getElementById("dot-key");
 const operation = document.getElementById("operation");
-// const allkeys = document.getElementsByClassName("btn-style");
 
 const calculator = () => {
   let op = "";
   let prevOp = 0;
   let currOp = 0;
-  //let calcFirstTime = true;
   let checkOperator = false;
 
   function add() {
@@ -29,12 +28,13 @@ const calculator = () => {
   function clear() {
     currentOp.innerHTML = "";
     operation.innerHTML = "";
-    previousOp.innerHTML = "";
+    previousOp.innerHTML = 0;
     checkOperator = false;
   }
 
   function equal() {
-    console.log("= pressed");
+    currOp = currentOp.innerHTML;
+    prevOp = previousOp.innerHTML;
     if (
       currentOp.innerHTML === "" &&
       operation.innerHTML === "" &&
@@ -56,43 +56,21 @@ const calculator = () => {
     else {
       switch (op) {
         case "+":
-          // currOp = currentOp.innerHTML;
-          // prevOp = previousOp.innerHTML;
-          // // if(operation.innerHTML==="+")
-          // add();
-          //previousOp.innerHTML = "";
-          operation.innerHTML = "";
           add();
-          currentOp.innerHTML = "";
-          checkOperator = true;
           break;
         case "-":
-          currOp = currentOp.innerHTML;
-          prevOp = previousOp.innerHTML;
-          //  previousOp.innerHTML = null;
-          operation.innerHTML = "";
           minus();
-          currentOp.innerHTML = "";
-          checkOperator = true;
           break;
         case "*":
-          currOp = currentOp.innerHTML;
-          prevOp = previousOp.innerHTML;
-          //   previousOp.innerHTML = null;
-          operation.innerHTML = null;
           times();
-          currentOp.innerHTML = "";
           break;
         case "/":
-          currOp = currentOp.innerHTML;
-          prevOp = previousOp.innerHTML;
-          // previousOp.innerHTML = null;
-          operation.innerHTML = null;
           divide();
-          currentOp.innerHTML = "";
           break;
         default:
       }
+      operation.innerHTML = "";
+      currentOp.innerHTML = "";
     }
   }
   clearKey.addEventListener("click", (event) => {
@@ -101,42 +79,27 @@ const calculator = () => {
   equalKey.addEventListener("click", (event) => {
     equal();
   });
+  dotKey.addEventListener("click", (event) => {
+    if (
+      operation.innerHTML === "" &&
+      previousOp.innerHTML.indexOf(".") === -1
+    ) {
+      previousOp.innerHTML += event.target.innerHTML;
+    } else if (
+      currentOp.innerHTML === "" &&
+      operation.innerHTML !== "" &&
+      currentOp.innerHTML.indexOf(".") === -1
+    ) {
+      currentOp.innerHTML = "0" + event.target.innerHTML;
+    } else if (
+      operation.innerHTML !== "" &&
+      currentOp.innerHTML.indexOf(".") === -1
+    ) {
+      currentOp.innerHTML += event.target.innerHTML;
+    }
+  });
 
-  // document.addEventListener("keydown", (event) => {
-  //   let name = event.key;
-  //   let code = event.code;
-  //   // alert(`Key pressed ${name} \r\n Key code value: ${code}`);
-  //   console.log(name, code);
-  //   if (
-  //     name === "1" ||
-  //     name === "2" ||
-  //     name === "3" ||
-  //     name === "4" ||
-  //     name === "5" ||
-  //     name === "6" ||
-  //     name === "7" ||
-  //     name === "8" ||
-  //     name === "9" ||
-  //     name === "0" && checkOperator === false
-  //   ) {
-  //     if(previousOp.innerText !==null){
-  //     if (previousOp.innerHTML === "0") previousOp.innerHTML = name;
-  //     else previousOp.innerHTML += name;
-  //     }
-  //     else if(checkOperator===true){
-  //      currentOp.innerHTML += keyNum;
-  //     }
-  //   } 
-  //   else if(name === "*"){
-  //      // alert("Insert operation first");
-  //      operation.innerHTML = "*";
-  //      checkOperator = true;
-  //     }
-  //   else 
-  //   return;
-    
-  // });
-
+  //-----------!NUMBERS EVENT------------------
   for (let i = 0; i < numberEls.length; i++) {
     numberEls[i].addEventListener("click", (event) => {
       const keyNum = event.target.innerHTML;
@@ -153,6 +116,7 @@ const calculator = () => {
       }
     });
   }
+
   //-----------OPERATOR EVENT!!-----------
   for (let i = 0; i < operatorEls.length; i++) {
     operatorEls[i].addEventListener("click", (event) => {
@@ -169,39 +133,32 @@ const calculator = () => {
       }
       operatorEls.innerHTML = event.target.innerHTML;
       prevOp = previousOp.innerHTML;
-      
       switch (event.target.innerHTML) {
         case "+":
-          console.log("+ clicked");
           operation.innerHTML = "+";
           op = "+";
-          prevOp = previousOp.innerHTML;
-          checkOperator = true;
           break;
         case "-":
-          console.log("- clicked");
           operation.innerHTML = "-";
           op = "-";
-          prevOp = previousOp.innerHTML;
-          checkOperator = true;
           break;
         case "*":
-          console.log("* clicked");
           operation.innerHTML = "*";
           op = "*";
-          prevOp = previousOp.innerHTML;
-          checkOperator = true;
           break;
         case "/":
-          console.log("/ clicked");
           operation.innerHTML = "/";
           op = "/";
-          prevOp = previousOp.innerHTML;
-          checkOperator = true;
           break;
-          
         default:
       }
+      if (prevOp[prevOp.length - 1] === ".") {
+        prevOp = prevOp.slice(0, -1);
+        console.log(prevOp);
+        previousOp.innerHTML = prevOp;
+      }
+      prevOp = previousOp.innerHTML;
+      checkOperator = true;
     });
   }
 };
