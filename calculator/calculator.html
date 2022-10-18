@@ -9,8 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="result">
-            <span id="total">0</span>
+        <div class="result" id="result">
+            <div id="previous-op" >0</div>
+            <div id="operation"></div>
+            <div id="current-op"></div>
         </div>
         <div class="main"> 
             <div class="row">
@@ -23,7 +25,7 @@
                 <button class="btn-style numbers">4</button>
                 <button class="btn-style numbers">5</button>
                 <button class="btn-style numbers">6</button>
-                <button class="btn-style operator">X</button>
+                <button class="btn-style operator">*</button>
                 
             </div>
             <div class="row">
@@ -35,10 +37,12 @@
             </div>
             <div class="row">
                 <button class="btn-style numbers">0</button>
-                <button class="btn-style clear-key">C</button>
-                <button class="btn-style equal-key">=</button>
-                <button class="btn-style operator">-</button>
-                
+                <button class="btn-style numbers">.</button>
+                <button class="btn-style" id="equal-key">=</button>
+                <button class="btn-style operator">-</button>         
+            </div>
+            <div class="row">
+                <button class="btn-style" id="clear-key">CLEAR</button>
             </div>
             
         </div>
